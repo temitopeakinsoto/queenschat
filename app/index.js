@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Register from "./components/Register";
@@ -14,8 +15,13 @@ const Container = () => {
   );
 };
 
-if(module.hot){
-    module.hot.accept();
+if (module.hot) {
+  module.hot.accept();
 }
 
-ReactDOM.render(<Container />, document.getElementById("root"));
+ReactDOM.render(
+  <Router>
+    <Container />
+  </Router>,
+  document.getElementById("root")
+);
