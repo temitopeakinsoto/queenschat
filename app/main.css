@@ -5,6 +5,10 @@ body {
   .header-bar {
     background-color: #292929;
   }
+
+  .bg-primary {
+    background-color: rosybrown !important;
+  }
   
   .container--narrow {
     max-width: 732px;
