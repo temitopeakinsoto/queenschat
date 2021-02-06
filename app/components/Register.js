@@ -1,8 +1,10 @@
-import React from 'react'
+import React from "react";
+import PageTemplate from "./PageTemplate";
+import Container from './Container'
 
 export default function Register() {
-    return (
-        <div className="container py-md-5">
+  return (
+    <PageTemplate wide="true" title="Welcome">
         <div className="row align-items-center">
           <div className="col-lg-7 py-3 py-md-5">
             <h1 className="display-3">Remember Writing?</h1>
@@ -62,6 +64,6 @@ export default function Register() {
             </form>
           </div>
         </div>
-      </div>
-    )
+    </PageTemplate>
+  );
 }

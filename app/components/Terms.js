@@ -1,8 +1,10 @@
 import React from "react";
+import PageTemplate from './PageTemplate'
 
 export default function Terms() {
   return (
-    <div className="container container--narrow py-md-5">
+    <PageTemplate title="Terms">
+      <div className="container container--narrow py-md-5">
       <h2>Our Terms &amp; Conditions</h2>
       
       <p className="lead text-muted">
@@ -32,6 +34,7 @@ export default function Terms() {
         nisi sed harum laborum, nemo odio animi officia quisquam. Veniam, natus
         reprehenderit.
       </p>
-    </div>
+      </div>
+    </PageTemplate>
   );
 }

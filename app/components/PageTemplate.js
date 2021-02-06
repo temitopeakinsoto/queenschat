@@ -1,14 +1,15 @@
 import React, {useEffect} from 'react'
+import Container from './Container'
 
 export default function PageTemplate(props) {
     useEffect(() => {
         document.title = `Queenschat | ${props.title}`;
-        document.body.scrollTop = 0;
+        window.scrollTo(0, 0);
     }, []);
 
     return (
-        <div>
+        <Container wide={props.wide}>
             { props.children }            
-        </div>
+        </Container>
     )
 }
