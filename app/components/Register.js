@@ -1,8 +1,29 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import PageTemplate from "./PageTemplate";
 import Container from './Container'
 
+const initialFormValues = {
+  username: '',
+  email: '',
+  password: ''
+}
 export default function Register() {
+  const [formValues, setFormValues] = useState(initialFormValues);
+
+  const handleInputChange = e => {
+    
+    setFormValues({
+      ...initialFormValues,
+      [e.target.name]: e.target.value
+    })
+  }
+
+  const handleFormSubmit = e => {
+    e.preventDefault();
+    const { name, email, password } = formValues;
+    const newUser = { name, email, password }
+    console.log("Our new user is", newUser)
+  }
   return (
     <PageTemplate wide="true" title="Welcome">
         <div className="row align-items-center">
@@ -16,7 +37,7 @@ export default function Register() {
             </p>
           </div>
           <div className="col-lg-5 pl-lg-5 pb-3 py-lg-5">
-            <form>
+            <form onSubmit={handleFormSubmit}>
               <div className="form-group">
                 <label htmlFor="username-register" className="text-muted mb-1">
                   <small>Username</small>
@@ -28,6 +49,8 @@ export default function Register() {
                   type="text"
                   placeholder="Pick a username"
                   autoComplete="off"
+                  onChange={handleInputChange}
+                  value={formValues.username}
                 />
               </div>
               <div className="form-group">
@@ -41,6 +64,8 @@ export default function Register() {
                   type="text"
                   placeholder="you@example.com"
                   autoComplete="off"
+                  onChange={handleInputChange}
+                  value={formValues.email}
                 />
               </div>
               <div className="form-group">
@@ -53,6 +78,8 @@ export default function Register() {
                   className="form-control"
                   type="password"
                   placeholder="Create a password"
+                  value={formValues.password}
+                  onChange={handleInputChange}
                 />
               </div>
               <button
